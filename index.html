@@ -767,6 +767,17 @@ footer .f-addr { margin: 8px 0; font-size: 13px; color: var(--muted, #A89B86); }
 @media (max-width:520px){ .brand-logo{ height:40px !important; } }
 
 
+
+/* no white hairline above logo */
+#siteHeader.sticky, header.sticky, .sticky {
+  border-top: none !important;
+  box-shadow: none !important;
+}
+.brand-logo {
+  -webkit-clip-path: inset(1px 0 0 0);
+  clip-path: inset(1px 0 0 0);
+}
+
 </style>
 <script>
 (function() {
