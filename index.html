@@ -768,14 +768,53 @@ footer .f-addr { margin: 8px 0; font-size: 13px; color: var(--muted, #A89B86); }
 
 
 
-/* no white hairline above logo */
-#siteHeader.sticky, header.sticky, .sticky {
-  border-top: none !important;
-  box-shadow: none !important;
-}
+
+/* Stev logos — wordmark in header, mark on cards */
 .brand-logo {
-  -webkit-clip-path: inset(1px 0 0 0);
-  clip-path: inset(1px 0 0 0);
+  height: 48px !important;
+  width: auto !important;
+  max-width: min(300px, 72vw) !important;
+  object-fit: contain !important;
+  filter: drop-shadow(0 0 8px rgba(198,163,90,0.35));
+  -webkit-clip-path: none !important;
+  clip-path: none !important;
+}
+@media (max-width: 520px) {
+  .brand-logo { height: 38px !important; }
+}
+.brand {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0 !important;
+  font-size: 0 !important;
+  letter-spacing: 0 !important;
+  color: transparent !important;
+}
+.brand::before {
+  content: "" !important;
+  display: block !important;
+  width: 72px;
+  height: 72px;
+  background: url("img/logo-mark.png") center / contain no-repeat;
+  flex: 0 0 auto;
+}
+.brand-header { font-size: inherit !important; color: inherit !important; }
+.brand-header::before { display: none !important; content: none !important; }
+.f-logo {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0 !important;
+  font-size: 0 !important;
+  color: transparent !important;
+}
+.f-logo::before {
+  content: "" !important;
+  display: block !important;
+  width: 56px;
+  height: 56px;
+  background: url("img/logo-mark.png") center / contain no-repeat;
 }
 
 </style>
@@ -861,7 +900,7 @@ footer .f-addr { margin: 8px 0; font-size: 13px; color: var(--muted, #A89B86); }
     <div class="top-panel">
       <div class="brand-row">
         <div class="brand brand-header">
-          <img loading="lazy" class="brand-logo" src="img/0001_81e10ef0bf.png" alt="STAR GOLD" width="220" height="44">
+          <img loading="lazy" class="brand-logo" src="img/logo-wordmark.png" alt="STAR GOLD" width="220" height="44">
           <div class="brand-text">
             <div class="brand-sub">Каталог · Коллекция</div>
           </div>
