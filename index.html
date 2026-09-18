@@ -227,10 +227,8 @@ img, .photo, .card {
     transparent 1px 14px
   );
 }
-.photo::before {
-  content: none !important;
-  display: none !important;
-}
+/* photo watermark handled below */
+.photo::before { content: none; }
 .no-copy {
   -webkit-user-select: none;
   user-select: none;
@@ -805,6 +803,37 @@ footer .f-addr { margin: 8px 0; font-size: 13px; color: var(--muted, #A89B86); }
   content: none !important;
   display: none !important;
   background: none !important;
+}
+
+
+/* One ★ STAR GOLD watermark on the photo itself */
+.photo {
+  position: relative;
+}
+.photo::before {
+  content: "★ STAR GOLD" !important;
+  display: block !important;
+  position: absolute;
+  left: 50%;
+  bottom: 12px;
+  transform: translateX(-50%);
+  z-index: 3;
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  color: rgba(232, 213, 163, 0.72);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.75);
+  pointer-events: none;
+  white-space: nowrap;
+  font-weight: 650;
+}
+/* Hide brand line under the card — text lives on the image */
+.brand {
+  display: none !important;
+}
+.brand::before,
+.brand::after {
+  content: none !important;
+  display: none !important;
 }
 
 </style>
